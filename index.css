@@ -1,0 +1,1773 @@
+
+/* =========================================================
+   MIRAVEN RESTAURANT
+   DARK LUXURY — BLACK, GOLD & GLASS
+   ========================================================= */
+
+
+/* =========================
+   1. RESET & VARIABLES
+   ========================= */
+
+:root {
+    --black: #080807;
+    --black-soft: #0d0c0a;
+    --dark: #12110e;
+    --dark-brown: #1b150d;
+
+    --gold: #c89b45;
+    --gold-light: #e1bb70;
+    --gold-dark: #8f6829;
+
+    --cream: #f3ead8;
+    --white: #fffaf0;
+    --muted: #a49d91;
+
+    --border: rgba(200, 155, 69, 0.28);
+
+    --shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--black);
+    color: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+body.page-leaving {
+    opacity: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+}
+
+p {
+    color: var(--muted);
+}
+
+
+/* =========================
+   2. GENERAL LAYOUT
+   ========================= */
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 105px 0;
+}
+
+.section-label {
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.08;
+}
+
+
+/* =========================
+   3. HEADER & NAVIGATION
+   ========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 15px 0;
+
+    background: rgba(5, 5, 4, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(200, 155, 69, 0.18);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* Logo image */
+
+.miraven-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 190px;
+    flex-shrink: 0;
+
+    transition: 0.3s ease;
+}
+
+.miraven-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.miraven-logo:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #ddd5c7;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold-light);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* Header reservation button */
+
+.nav-btn {
+    flex-shrink: 0;
+
+    padding: 11px 18px;
+
+    border: 1px solid var(--gold);
+    background: rgba(200, 155, 69, 0.04);
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+
+/* Mobile menu button */
+
+.menu-toggle {
+    display: none;
+
+    width: auto;
+    min-height: auto;
+
+    padding: 5px;
+
+    border: none;
+    background: transparent;
+
+    color: var(--cream);
+    font-size: 27px;
+}
+
+
+/* =========================
+   4. HERO SECTION
+   ========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-color: #080807;
+
+    /*
+      If your hero image is inside an images folder,
+      change this to: url("./images/hero.jpg")
+    */
+
+    background-image: url("./hero.jpg");
+    background-size: cover;
+    background-position: center;
+
+    isolation: isolate;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 3, 2, 0.94) 0%,
+            rgba(3, 3, 2, 0.75) 45%,
+            rgba(3, 3, 2, 0.30) 100%
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+    padding-top: 100px;
+}
+
+.hero-subtitle {
+    display: inline-block;
+
+    color: var(--gold-light);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    color: var(--cream);
+
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -1px;
+
+    margin-bottom: 28px;
+
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
+}
+
+.hero-description {
+    max-width: 540px;
+
+    color: #d4ccbf;
+    font-size: 15px;
+    line-height: 1.85;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+
+/* =========================
+   5. BUTTONS
+   ========================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    color: var(--black);
+
+    border: 1px solid var(--gold);
+
+    box-shadow: 0 12px 30px rgba(200, 155, 69, 0.18);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    background: #ebc77d;
+
+    box-shadow: 0 18px 40px rgba(200, 155, 69, 0.28);
+}
+
+.btn-outline {
+    border: 1px solid rgba(225, 187, 112, 0.75);
+
+    color: var(--gold-light);
+    background: rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: var(--black);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   6. ABOUT SECTION
+   ========================= */
+
+.about {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(200, 155, 69, 0.08),
+            transparent 35%
+        ),
+        #0b0b09;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 75px;
+    align-items: center;
+}
+
+
+/* About image arrangement */
+
+.about-images {
+    position: relative;
+    min-height: 540px;
+}
+
+.about-images img {
+    position: absolute;
+
+    width: 65%;
+    height: 380px;
+
+    object-fit: cover;
+
+    border: 1px solid rgba(200, 155, 69, 0.20);
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+}
+
+.about-images img:first-child {
+    top: 0;
+    left: 0;
+}
+
+.about-images img:last-child {
+    right: 0;
+    bottom: 0;
+
+    border: 8px solid #0b0b09;
+}
+
+
+/* About text panel */
+
+.about-content {
+    display: block;
+
+    padding: 42px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(30, 26, 20, 0.92),
+        rgba(11, 11, 9, 0.92)
+    );
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.about-content h2 {
+    color: var(--cream);
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    max-width: 520px;
+    margin-bottom: 20px;
+
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* About links */
+
+.about-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--gold-light);
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.text-link:hover {
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.view-menu-button {
+    display: inline-block;
+
+    margin-top: 10px;
+    padding: 11px 18px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.view-menu-button:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+
+/* =========================
+   7. STATS
+   ========================= */
+
+.stats {
+    padding: 70px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #050504,
+        #1c140b
+    );
+
+    border-top: 1px solid rgba(200, 155, 69, 0.18);
+    border-bottom: 1px solid rgba(200, 155, 69, 0.18);
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    color: var(--gold-light);
+
+    font-family: "Playfair Display", serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+
+    margin-bottom: 12px;
+}
+
+.stat-item p {
+    color: #c8c0b3;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   8. MENU SECTION
+   ========================= */
+
+.menu {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(200, 155, 69, 0.07),
+            transparent 35%
+        ),
+        #0a0a09;
+}
+
+.menu::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    top: 10%;
+    right: -220px;
+
+    border-radius: 50%;
+
+    background: rgba(200, 155, 69, 0.05);
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.section-heading {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    color: var(--cream);
+    margin-bottom: 20px;
+}
+
+.section-heading > p:last-child {
+    max-width: 520px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.section-heading::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 2px;
+
+    margin-top: 25px;
+
+    background: linear-gradient(
+        90deg,
+        var(--gold),
+        transparent
+    );
+}
+
+
+/* Menu filters */
+
+.menu-filters {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 19px;
+
+    border: 1px solid rgba(200, 155, 69, 0.28);
+    background: rgba(255, 255, 255, 0.025);
+
+    color: #c8c0b3;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+
+    transform: translateY(-2px);
+}
+
+
+/* Menu cards grid */
+
+.menu-grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* Menu card */
+
+.menu-card {
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(38, 31, 21, 0.94),
+        rgba(13, 13, 11, 0.98)
+    );
+
+    border: 1px solid rgba(200, 155, 69, 0.22);
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(225, 187, 112, 0.55);
+
+    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.55);
+}
+
+
+/* Food images */
+
+.menu-image {
+    position: relative;
+
+    height: 270px;
+    overflow: hidden;
+
+    background: #15130f;
+}
+
+.menu-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0, 0, 0, 0.45)
+    );
+
+    pointer-events: none;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.9);
+
+    transition: transform 0.6s ease;
+}
+
+.menu-card:hover .menu-image img {
+    transform: scale(1.07);
+}
+
+
+/* Menu information */
+
+.menu-info {
+    padding: 24px;
+}
+
+.menu-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.menu-title h3 {
+    color: var(--cream);
+
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.menu-title span {
+    color: var(--gold-light);
+
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.menu-info p {
+    color: #9f988c;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* View menu button */
+
+.menu-button {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    margin-top: 45px;
+}
+
+
+/* =========================
+   9. SPECIAL OFFER
+   ========================= */
+
+.special-offer {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-color: #11100e;
+
+    /*
+      If your special offer image is inside an images folder,
+      change this to: url("./images/special.jpg")
+    */
+
+    background-image: url("./special.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.special-offer::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.90),
+        rgba(0, 0, 0, 0.48)
+    );
+}
+
+.special-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 750px;
+
+    margin: auto;
+    padding: 55px 40px;
+
+    text-align: center;
+
+    background: rgba(5, 5, 4, 0.68);
+
+    border: 1px solid rgba(200, 155, 69, 0.35);
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.special-content h2 {
+    color: var(--cream);
+    margin-bottom: 20px;
+}
+
+.special-content p:not(.section-label) {
+    color: #c8c0b3;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   10. GALLERY
+   ========================= */
+
+.gallery {
+    background: #080807;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.gallery-grid > img,
+.gallery-item {
+    position: relative;
+
+    height: 320px;
+    overflow: hidden;
+
+    border: 1px solid rgba(200, 155, 69, 0.20);
+    background: #11100d;
+}
+
+.gallery-grid > img {
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.gallery-grid > img:hover {
+    filter: brightness(0.8);
+    border-color: rgba(200, 155, 69, 0.55);
+}
+
+
+/* Experience gallery card */
+
+.gallery-item {
+    display: block;
+    transition: 0.4s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.gallery-item::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.05) 70%
+    );
+}
+
+.gallery-item h3,
+.gallery-item p {
+    position: absolute;
+    left: 22px;
+    z-index: 2;
+}
+
+.gallery-item h3 {
+    bottom: 48px;
+
+    color: var(--cream);
+    font-size: 22px;
+}
+
+.gallery-item p {
+    bottom: 20px;
+
+    color: #d0c8bb;
+    font-size: 12px;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================
+   11. RESERVATION
+   ========================= */
+
+.reservation {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200, 155, 69, 0.08),
+            transparent 45%
+        ),
+        #0b0b09;
+}
+
+.reservation-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 65px;
+    align-items: center;
+}
+
+.reservation-content {
+    padding: 42px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(30, 26, 20, 0.92),
+        rgba(11, 11, 9, 0.92)
+    );
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.reservation-content h2 {
+    color: var(--cream);
+    margin-bottom: 25px;
+}
+
+.reservation-content > p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+
+/* Reservation form */
+
+.reservation-form {
+    padding: 38px;
+
+    background: rgba(15, 15, 15, 0.72);
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #d8d0c2;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid rgba(200, 155, 69, 0.25);
+    background: rgba(255, 255, 255, 0.045);
+
+    color: var(--cream);
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #706b62;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+
+    box-shadow: 0 0 0 3px rgba(200, 155, 69, 0.08);
+}
+
+.form-group select option {
+    background: #11100e;
+    color: var(--cream);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.reservation-form .btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   12. CONTACT
+   ========================= */
+
+.contact {
+    background: #090908;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 65px;
+    align-items: center;
+}
+
+.contact-info {
+    padding: 42px;
+
+    background: rgba(15, 15, 15, 0.65);
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.contact-info h2 {
+    color: var(--cream);
+    margin-bottom: 35px;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 28px;
+}
+
+.contact-details h4 {
+    color: var(--gold-light);
+
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+.contact-details p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.contact-details a {
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--gold-light);
+}
+
+
+/* Map placeholder */
+
+.map-placeholder {
+    min-height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200, 155, 69, 0.10),
+            transparent 55%
+        ),
+        #11100e;
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.map-placeholder p {
+    color: #756f65;
+}
+
+
+/* =========================
+   13. FOOTER
+   ========================= */
+
+.footer {
+    padding-top: 70px;
+
+    background: linear-gradient(
+        135deg,
+        #050504,
+        #120d07
+    );
+
+    border-top: 1px solid rgba(200, 155, 69, 0.22);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 55px;
+    padding-bottom: 60px;
+}
+
+.footer-brand .logo {
+    display: inline-block;
+
+    color: var(--cream);
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.footer-brand .logo span {
+    color: var(--gold);
+}
+
+.footer-brand p {
+    max-width: 300px;
+
+    color: #898176;
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-links h4 {
+    color: var(--cream);
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    width: fit-content;
+
+    color: #898176;
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+    transform: translateX(3px);
+}
+
+
+/* Social links */
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #b99752;
+
+    transition: 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--gold-light);
+    transform: translateX(4px);
+}
+
+
+/* Footer bottom */
+
+.footer-bottom {
+    padding: 25px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(200, 155, 69, 0.16);
+}
+
+.footer-bottom p {
+    color: #706a61;
+    font-size: 12px;
+}
+
+
+/* =========================
+   14. SCROLL REVEAL
+   ========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   15. TABLET RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 992px) {
+
+    .navbar {
+        gap: 18px;
+    }
+
+    .miraven-logo {
+        width: 155px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-btn {
+        padding: 10px 13px;
+        font-size: 10px;
+    }
+
+    .about-grid {
+        gap: 40px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .reservation-grid,
+    .contact-grid {
+        gap: 40px;
+    }
+}
+
+
+/* =========================
+   16. MOBILE RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .section {
+        padding: 75px 0;
+    }
+
+
+    /* Mobile header */
+
+    .header {
+        padding: 12px 0;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .miraven-logo {
+        width: 155px;
+    }
+
+    .nav-links,
+    .nav-btn {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* Menu opened by JavaScript */
+
+    .nav-links.mobile-active {
+        display: flex;
+
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+
+        background: rgba(10, 9, 7, 0.97);
+
+        border: 1px solid rgba(200, 155, 69, 0.28);
+
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav-links.mobile-active a {
+        font-size: 14px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 760px;
+        background-position: 58% center;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 12vw, 70px);
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* About */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+        min-height: auto;
+    }
+
+    .about-images img {
+        position: static;
+
+        width: 100%;
+        height: 190px;
+
+        border: 1px solid var(--border);
+    }
+
+    .about-images img:last-child {
+        border: 1px solid var(--border);
+    }
+
+    .about-content {
+        padding: 32px 25px;
+    }
+
+
+    /* Stats */
+
+    .stats {
+        padding: 60px 20px;
+    }
+
+    .stat-number {
+        font-size: 60px;
+    }
+
+
+    /* Menu */
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .menu-image {
+        height: 270px;
+    }
+
+    .menu-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        padding-bottom: 8px;
+
+        scrollbar-width: none;
+    }
+
+    .menu-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+    }
+
+
+    /* Special offer */
+
+    .special-content {
+        width: 90%;
+        padding: 40px 25px;
+    }
+
+
+    /* Gallery */
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-grid > img,
+    .gallery-item {
+        height: 230px;
+    }
+
+
+    /* Reservation */
+
+    .reservation-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .reservation-content {
+        padding: 32px 25px;
+    }
+
+    .reservation-form {
+        padding: 25px;
+    }
+
+
+    /* Contact */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-info {
+        padding: 32px 25px;
+    }
+
+    .map-placeholder {
+        min-height: 320px;
+    }
+
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================
+   17. SMALL PHONES
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .miraven-logo {
+        width: 135px;
+    }
+
+    .hero {
+        min-height: 720px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+    }
+
+    .hero-subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .about-images img {
+        height: 150px;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+    .about-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-image {
+        height: 220px;
+    }
+
+    .menu-title h3 {
+        font-size: 18px;
+    }
+
+    .menu-title span {
+        font-size: 13px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid > img,
+    .gallery-item {
+        height: 280px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-details {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+}
+
+
+/* =========================
+   18. ACCESSIBILITY & MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* =========================
+   19. SCROLLBAR
+   ========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050504;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-dark);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}

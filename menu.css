@@ -1,0 +1,971 @@
+
+/* =========================================================
+   MIRAVEN — FULL MENU
+   DARK LUXURY / BLACK + GOLD
+   Designed for your existing menu.html
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+    background: #080807;
+    color: #f4f0e8;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --gold: #c9a45c;
+    --gold-light: #e4c985;
+    --background: #080807;
+    --surface: #11110f;
+    --surface-light: #171612;
+    --text: #f4f0e8;
+    --muted: #a7a198;
+    --border: rgba(201, 164, 92, 0.2);
+}
+
+::selection {
+    background: var(--gold);
+    color: #080807;
+}
+
+
+/* =========================================================
+   2. HEADER & NAVIGATION
+   ========================================================= */
+
+.menu-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 88px;
+    padding: 15px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    background: rgba(8, 8, 7, 0.94);
+
+    border-bottom: 1px solid rgba(201, 164, 92, 0.14);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+/* Logo */
+
+.menu-header .logo {
+    flex-shrink: 0;
+}
+
+.menu-header .logo h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--gold-light);
+}
+
+/* Navigation */
+
+.menu-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu-header nav a {
+    position: relative;
+
+    color: #c3bdb2;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+.menu-header nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width 0.3s ease;
+}
+
+.menu-header nav a:hover,
+.menu-header nav a.active {
+    color: var(--gold-light);
+}
+
+.menu-header nav a:hover::after,
+.menu-header nav a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   3. MENU HERO
+   ========================================================= */
+
+.menu-hero {
+    position: relative;
+
+    min-height: 540px;
+    padding: 100px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(201, 164, 92, 0.12),
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            #0d0d0b 0%,
+            #080807 100%
+        );
+
+    border-bottom: 1px solid rgba(201, 164, 92, 0.12);
+}
+
+/* Decorative gold glow */
+
+.menu-hero::before {
+    content: "";
+
+    position: absolute;
+    top: -180px;
+    right: -150px;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 164, 92, 0.06);
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.menu-hero::after {
+    content: "";
+
+    position: absolute;
+    bottom: -230px;
+    left: -150px;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 164, 92, 0.045);
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.menu-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+}
+
+.menu-hero-content > p {
+    margin-bottom: 22px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.menu-hero-content h1 {
+    margin-bottom: 25px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 7vw, 82px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -1px;
+
+    color: #fffaf0;
+}
+
+.menu-hero-content span {
+    display: block;
+
+    max-width: 620px;
+    margin: 0 auto;
+
+    color: #b6afa3;
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   4. MENU INTRODUCTION
+   ========================================================= */
+
+.menu-intro {
+    max-width: 780px;
+    margin: 0 auto;
+
+    padding: 100px 25px 65px;
+
+    text-align: center;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+}
+
+.menu-intro h2 {
+    margin-bottom: 22px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 500;
+    line-height: 1.2;
+
+    color: var(--text);
+}
+
+.menu-intro h2::after {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 1px;
+
+    margin: 22px auto 0;
+
+    background: var(--gold);
+}
+
+.menu-intro > p:last-child {
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   5. MENU CATEGORY SECTIONS
+   ========================================================= */
+
+.menu-section {
+    position: relative;
+
+    width: min(1120px, 90%);
+    margin: 0 auto;
+
+    padding: 75px 0;
+}
+
+/* Subtle alternating background */
+
+.menu-section.alternate {
+    width: 100%;
+    max-width: none;
+
+    padding: 75px max(5%, calc((100% - 1120px) / 2));
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(201, 164, 92, 0.035),
+            transparent 45%
+        ),
+        #0e0e0c;
+
+    border-top: 1px solid rgba(201, 164, 92, 0.08);
+    border-bottom: 1px solid rgba(201, 164, 92, 0.08);
+}
+
+.menu-section.drinks {
+    padding-bottom: 100px;
+}
+
+
+/* =========================================================
+   6. CATEGORY TITLES
+   ========================================================= */
+
+.menu-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+}
+
+.menu-title .section-label {
+    flex-shrink: 0;
+    margin: 0;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.menu-title h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(29px, 4vw, 43px);
+    font-weight: 500;
+    line-height: 1.2;
+
+    color: #f4f0e8;
+}
+
+
+/* =========================================================
+   7. MENU GRID
+   ========================================================= */
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   8. MENU ITEM CARDS
+   ========================================================= */
+
+.menu-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 22px;
+
+    min-width: 0;
+    min-height: 125px;
+
+    padding: 25px 26px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(255, 255, 255, 0.012)
+    );
+
+    border: 1px solid rgba(201, 164, 92, 0.15);
+    border-radius: 10px;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
+
+    background: linear-gradient(
+        145deg,
+        rgba(201, 164, 92, 0.075),
+        rgba(255, 255, 255, 0.018)
+    );
+
+    border-color: rgba(201, 164, 92, 0.45);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Gold detail */
+
+.menu-item::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+
+    width: 2px;
+
+    background: var(--gold);
+
+    transform: scaleY(0);
+    transform-origin: center;
+
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover::before {
+    transform: scaleY(1);
+}
+
+
+/* =========================================================
+   9. FOOD NAME & DESCRIPTION
+   ========================================================= */
+
+.menu-item > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.menu-item h3 {
+    margin-bottom: 8px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
+
+    color: #f5f0e6;
+}
+
+.menu-item p {
+    max-width: 390px;
+
+    color: #a49d91;
+
+    font-size: 12.5px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   10. MENU PRICES
+   ========================================================= */
+
+.menu-item > span {
+    flex-shrink: 0;
+
+    color: var(--gold-light);
+
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   11. RESERVATION CTA
+   ========================================================= */
+
+.menu-ending {
+    position: relative;
+
+    padding: 110px 25px;
+
+    text-align: center;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(201, 164, 92, 0.09),
+            transparent 60%
+        ),
+        #0c0c0a;
+
+    border-top: 1px solid rgba(201, 164, 92, 0.14);
+    border-bottom: 1px solid rgba(201, 164, 92, 0.14);
+}
+
+.menu-ending::before {
+    content: "";
+
+    position: absolute;
+    top: -220px;
+    left: -180px;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 164, 92, 0.04);
+    filter: blur(100px);
+}
+
+.menu-ending h2 {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(35px, 5vw, 57px);
+    font-weight: 500;
+    line-height: 1.2;
+
+    color: #fffaf0;
+}
+
+.menu-ending p {
+    position: relative;
+
+    margin-bottom: 32px;
+
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   12. RESERVATION BUTTON
+   ========================================================= */
+
+.reserve-menu-button {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 49px;
+    padding: 0 30px;
+
+    background: var(--gold);
+    border: 1px solid var(--gold);
+
+    color: #090908;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.reserve-menu-button:hover {
+    transform: translateY(-3px);
+
+    background: transparent;
+    color: var(--gold-light);
+}
+
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
+footer {
+    padding: 65px 6% 25px;
+
+    text-align: center;
+
+    background: #050504;
+
+    border-top: 1px solid rgba(201, 164, 92, 0.12);
+}
+
+footer h2 {
+    margin-bottom: 12px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+
+    color: var(--gold-light);
+}
+
+footer > p {
+    color: #928b80;
+    font-size: 13px;
+}
+
+/* Footer navigation */
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin: 30px 0;
+}
+
+.footer-links a {
+    color: #aaa398;
+    font-size: 12px;
+
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+}
+
+/* Copyright */
+
+footer .copyright {
+    margin-top: 28px;
+    padding-top: 22px;
+
+    color: #68645c;
+    font-size: 11px;
+
+    border-top: 1px solid rgba(201, 164, 92, 0.09);
+}
+
+
+/* =========================================================
+   14. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .menu-header {
+        padding: 15px 5%;
+        gap: 20px;
+    }
+
+    .menu-header nav {
+        gap: 20px;
+    }
+
+    .menu-header nav a {
+        font-size: 12px;
+    }
+
+    .menu-section {
+        width: 90%;
+    }
+
+    .menu-section.alternate {
+        padding: 70px 5%;
+    }
+
+    .menu-item {
+        padding: 22px;
+        gap: 15px;
+    }
+
+    .menu-item h3 {
+        font-size: 16px;
+    }
+
+    .menu-item > span {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   15. MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    /* Header */
+
+    .menu-header {
+        position: relative;
+
+        min-height: auto;
+        padding: 18px 6%;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .menu-header .logo h2 {
+        font-size: 27px;
+    }
+
+    .menu-header nav {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 12px 21px;
+    }
+
+    .menu-header nav a {
+        font-size: 11px;
+    }
+
+    /* Hero */
+
+    .menu-hero {
+        min-height: 430px;
+        padding: 75px 22px;
+    }
+
+    .menu-hero-content > p {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .menu-hero-content h1 {
+        font-size: clamp(39px, 10vw, 53px);
+        letter-spacing: -0.5px;
+    }
+
+    .menu-hero-content span {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    /* Intro */
+
+    .menu-intro {
+        padding: 70px 23px 45px;
+    }
+
+    .menu-intro h2 {
+        font-size: 32px;
+    }
+
+    .menu-intro > p:last-child {
+        font-size: 13px;
+    }
+
+    /* Sections */
+
+    .menu-section {
+        width: 88%;
+        padding: 50px 0;
+    }
+
+    .menu-section.alternate {
+        padding: 50px 6%;
+    }
+
+    .menu-section.drinks {
+        padding-bottom: 70px;
+    }
+
+    /* Category titles */
+
+    .menu-title {
+        gap: 13px;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+    }
+
+    .menu-title h2 {
+        font-size: 27px;
+    }
+
+    .menu-title .section-label {
+        font-size: 9px;
+    }
+
+    /* Cards */
+
+    .menu-list {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .menu-item {
+        min-height: 105px;
+        padding: 20px;
+
+        gap: 14px;
+        border-radius: 9px;
+    }
+
+    .menu-item h3 {
+        font-size: 16px;
+    }
+
+    .menu-item p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .menu-item > span {
+        font-size: 12px;
+    }
+
+    /* Ending */
+
+    .menu-ending {
+        padding: 80px 22px;
+    }
+
+    .menu-ending h2 {
+        font-size: 34px;
+    }
+
+    .menu-ending p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    /* Footer */
+
+    footer {
+        padding: 50px 6% 22px;
+    }
+
+    .footer-links {
+        gap: 15px 20px;
+    }
+}
+
+
+/* =========================================================
+   16. SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .menu-header nav {
+        gap: 11px 15px;
+    }
+
+    .menu-header nav a {
+        font-size: 10px;
+    }
+
+    .menu-title h2 {
+        font-size: 24px;
+    }
+
+    .menu-item {
+        padding: 17px 15px;
+        gap: 10px;
+    }
+
+    .menu-item h3 {
+        font-size: 14px;
+    }
+
+    .menu-item p {
+        font-size: 11px;
+    }
+
+    .menu-item > span {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   17. SCROLL REVEAL
+   Works with your existing JavaScript
+   ========================================================= */
+
+.menu-intro,
+.menu-section,
+.menu-ending,
+.menu-item,
+.menu-title {
+    opacity: 0;
+    transform: translateY(22px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.menu-intro.show,
+.menu-section.show,
+.menu-ending.show,
+.menu-item.show,
+.menu-title.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .menu-intro,
+    .menu-section,
+    .menu-ending,
+    .menu-item,
+    .menu-title {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .menu-item:hover {
+        transform: none;
+    }
+}

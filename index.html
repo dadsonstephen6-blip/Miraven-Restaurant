@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Miraven Restaurant | Fine Dining & Great Taste</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navbar container">
+
+        <a href="./index.html" class="miraven-logo">
+            <img src="./Miraven's Logo.png" alt="Miraven Restaurant Logo">
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./experience.html">Experience</a></li>
+            <li><a href="./reservation.html">Reservation</a></li>
+        </ul>
+
+        <a href="./reservation.html" class="nav-btn">
+            Reserve a Table
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open Menu">
+            ☰
+        </button>
+
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container">
+
+            <p class="hero-subtitle">
+                Welcome to our restaurant
+            </p>
+
+            <h1>
+                Good Food.<br>
+                Great Moments.
+            </h1>
+
+            <p class="hero-description">
+                Experience delicious meals made with fresh ingredients,
+                passion, love and a touch of something special.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="./menu.html" class="btn btn-primary">
+                    Explore Our Menu
+                </a>
+
+                <a href="./reservation.html" class="btn btn-outline">
+                    Book a Table
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+
+        <div class="container about-grid">
+
+            <div class="about-images">
+                <img src="./Restaurant interior.jpg" alt="Restaurant interior">
+                <img src="./delicioous restaurant meal.jfif" alt="Delicious restaurant meal">
+            </div>
+
+            <div class="about-content">
+
+                <p class="section-label">Our Story</p>
+
+                <h2>
+                    More Than Just<br>
+                    A Place To Eat.
+                </h2>
+
+                <p>
+                    We believe good food brings people together.
+                    Our restaurant combines quality ingredients and
+                    traditional cooking techniques to create delicious
+                    meals and memorable dining experiences.
+                </p>
+
+                <p>
+                    From our kitchen to your table, every dish is
+                    prepared with care and attention to detail.
+                </p>
+
+                <div class="about-links">
+                    <a href="./menu.html" class="text-link">
+                        Discover Our Menu →
+                    </a>
+
+                    <a href="./menu.html" class="view-menu-button">
+                        View Full Menu
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="container stats-grid">
+
+            <div class="stat-item">
+                <div class="stat-number">
+                    <span class="counter" data-target="4000">0</span>+
+                </div>
+
+                <p>Happy Clients</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FEATURED MENU -->
+    <section class="menu section" id="menu">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="section-label">Our Menu</p>
+
+                <h2>
+                    Taste Something<br>
+                    Extraordinary.
+                </h2>
+
+                <p>
+                    A selection of our most loved dishes,
+                    freshly prepared for you.
+                </p>
+
+            </div>
+
+            <div class="menu-filters">
+
+                <button class="filter-btn active" type="button" data-category="all">
+                    All
+                </button>
+
+                <button class="filter-btn" type="button" data-category="main">
+                    Main Dishes
+                </button>
+
+                <button class="filter-btn" type="button" data-category="rice">
+                    Rice
+                </button>
+
+                <button class="filter-btn" type="button" data-category="drinks">
+                    Drinks
+                </button>
+
+                <button class="filter-btn" type="button" data-category="dessert">
+                    Desserts
+                </button>
+
+            </div>
+
+
+            <div class="menu-grid">
+
+                <article class="menu-card" data-category="main">
+
+                    <div class="menu-image">
+                        <img src="./signature dish.png" alt="Signature dish">
+                    </div>
+
+                    <div class="menu-info">
+
+                        <div class="menu-title">
+                            <h3>Signature Dish</h3>
+                            <span>₦8,500</span>
+                        </div>
+
+                        <p>
+                            Deliciously prepared with fresh ingredients
+                            and our signature sauce.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <article class="menu-card" data-category="rice">
+
+                    <div class="menu-image">
+                        <img src="./special jollof rice.jfif" alt="Special jollof rice">
+                    </div>
+
+                    <div class="menu-info">
+
+                        <div class="menu-title">
+                            <h3>Special Jollof Rice</h3>
+                            <span>₦6,500</span>
+                        </div>
+
+                        <p>
+                            Rich, flavorful Nigerian jollof rice
+                            served with your choice of protein.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <article class="menu-card" data-category="main">
+
+                    <div class="menu-image">
+                        <img src="./grilled chicken.jpg" alt="Grilled chicken">
+                    </div>
+
+                    <div class="menu-info">
+
+                        <div class="menu-title">
+                            <h3>Grilled Chicken</h3>
+                            <span>₦10,500</span>
+                        </div>
+
+                        <p>
+                            Tender grilled chicken served with
+                            vegetables and our house sauce.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <article class="menu-card" data-category="drinks">
+
+                    <div class="menu-image">
+                        <img src="./fresh fruit drinks.jfif" alt="Fresh fruit drink">
+                    </div>
+
+                    <div class="menu-info">
+
+                        <div class="menu-title">
+                            <h3>Fresh Fruit Juice</h3>
+                            <span>₦1,000</span>
+                        </div>
+
+                        <p>
+                            Freshly blended seasonal fruits served chilled.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <article class="menu-card" data-category="dessert">
+
+                    <div class="menu-image">
+                        <img src="./chocolate desert.jfif" alt="Chocolate dessert">
+                    </div>
+
+                    <div class="menu-info">
+
+                        <div class="menu-title">
+                            <h3>Chocolate Delight</h3>
+                            <span>₦7,000</span>
+                        </div>
+
+                        <p>
+                            A rich and indulgent chocolate dessert
+                            to finish your meal.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <article class="menu-card" data-category="rice">
+
+                    <div class="menu-image">
+                        <img src="./classic nigerian fried rice.jfif" alt="Classic fried rice">
+                    </div>
+
+                    <div class="menu-info">
+
+                        <div class="menu-title">
+                            <h3>Classic Fried Rice</h3>
+                            <span>₦6,500</span>
+                        </div>
+
+                        <p>
+                            Flavorful fried rice prepared with
+                            fresh vegetables and premium ingredients.
+                        </p>
+
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="menu-button">
+                <a href="./menu.html" class="btn btn-primary">
+                    View Full Menu
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SPECIAL OFFER -->
+    <section class="special-offer">
+
+        <div class="container special-content">
+
+            <p class="section-label">Today's Special</p>
+
+            <h2>
+                Something Delicious<br>
+                Is Waiting For You.
+            </h2>
+
+            <p>
+                Enjoy our chef's special selection made fresh every day.
+            </p>
+
+            <a href="./reservation.html" class="btn btn-primary">
+                Order Now
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- GALLERY -->
+    <section class="gallery section" id="gallery">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="section-label">Our Gallery</p>
+
+                <h2>
+                    Things worth seeing at Miraven
+                </h2>
+
+            </div>
+
+            <div class="gallery-grid">
+
+                <img src="./restaurant bar.jpg" alt="Restaurant bar">
+                <img src="./restaurant dining2.png" alt="Restaurant dining">
+                <img src="./restaurant meals.jfif" alt="Restaurant meal">
+                <img src="./Restaurant interior.jpg" alt="Restaurant interior">
+                <img src="./restaurant food.jfif" alt="Delicious food">
+
+                <a href="./experience.html" class="gallery-item">
+
+                    <img src="./restaurant experience photo.jfif" alt="Restaurant experience">
+
+                    <h3>Restaurant Experience</h3>
+
+                    <p>
+                        Discover our beautiful restaurant atmosphere.
+                    </p>
+
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- RESERVATION -->
+    <section class="reservation section" id="reservation">
+
+        <div class="container reservation-grid">
+
+            <div class="reservation-content">
+
+                <p class="section-label">Reservations</p>
+
+                <h2>
+                    Make Your<br>
+                    Table Yours Today.
+                </h2>
+
+                <p>
+                    Planning a dinner with someone special, or simply
+                    want to enjoy a great meal? Book a reservation
+                    with us today!
+                </p>
+
+                <a href="./reservation.html" class="text-link">
+                    Go to Reservations →
+                </a>
+
+            </div>
+
+
+            <form class="reservation-form" action="./reservation.html" method="get">
+
+                <div class="form-group">
+
+                    <label for="name">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="date">Date</label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="time">Time</label>
+
+                        <input
+                            type="time"
+                            id="time"
+                            name="time"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="guests">Number of Guests</label>
+
+                    <select id="guests" name="guests">
+
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6+">6+ Guests</option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Reserve Table
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+
+        <div class="container contact-grid">
+
+            <div class="contact-info">
+
+                <p class="section-label">Contact Us</p>
+
+                <h2>
+                    Come &amp;<br>
+                    Say Hello.
+                </h2>
+
+                <div class="contact-details">
+
+                    <div>
+                        <h4>Location</h4>
+                        <p>
+                            Still working on the location<br>
+
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4>Phone</h4>
+                        <p>09064975360, 07041147276</p>
+                    </div>
+
+                    <div>
+                        <h4>Email</h4>
+                        <p>
+                            <a href="mailto:dadsonstephen0@gmail.com">
+                                dadsonstephen0@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4>Opening Hours</h4>
+                        <p>
+                            Monday – Sunday<br>
+                            9:00 AM – 11:00 PM
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="map-placeholder">
+                <p>Google Maps Location</p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+
+            <a href="./index.html" class="logo">
+                Miraven<span>.</span>
+            </a>
+
+            <p>
+                Great food. Great moments.
+                Made with passion.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Quick Links</h4>
+
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./menu.html">Menu</a>
+            <a href="./experience.html">Experience</a>
+            <a href="./reservation.html">Reservation</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Follow Us</h4>
+            
+
+            <a href="https://www.instagram.com/dadson_bobo/"
+               class="social-link"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram
+            </a>
+
+            <a href="#" class="social-link">
+                Facebook
+            </a>
+
+            <a href="https://www.tiktok.com/@...weird3?_r=1&_t=ZS-98ufBi0A1yP"
+               class="social-link"
+               target="_blank"
+               rel="noopener noreferrer">
+                TikTok
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Miraven. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="./index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserve your table and plan your dining experience at Miraven.">
+
+    <title>Reserve a Table | Miraven</title>
+    <link rel="stylesheet" href="reservation.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="reservation-header">
+        <div class="logo">
+            <h2>Miraven</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="reservation.html" class="active">Reservation</a></li>
+        </ul>
+    </header>
+
+    <!-- HERO -->
+    <section class="reservation-hero">
+        <div class="hero-content">
+            <p>WELCOME TO MIRAVEN</p>
+            <h1>Reserve Your Table</h1>
+            <span>
+                Choose your meal, select your preferred time,
+                and let us prepare a memorable dining experience.
+            </span>
+        </div>
+    </section>
+
+    <!-- RESERVATION CONTENT -->
+    <main class="reservation-container">
+
+        <div class="reservation-intro">
+            <p class="section-label">TABLE RESERVATION</p>
+            <h2>Plan Your Visit</h2>
+            <p>Tell us what you'd like to enjoy and when you'd like to visit Miraven.</p>
+        </div>
+
+        <form id="reservationForm">
+
+            <!-- CUSTOMER INFORMATION -->
+            <section class="reservation-box">
+                <div class="box-heading">
+                    <span>01</span>
+                    <div>
+                        <h3>Your Information</h3>
+                        <p>Tell us who we'll be welcoming.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName"
+                            placeholder="Enter your full name" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone"
+                            placeholder="Enter your phone number" autocomplete="tel" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email"
+                            placeholder="Enter your email address" autocomplete="email" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESERVATION DETAILS -->
+            <section class="reservation-box">
+                <div class="box-heading">
+                    <span>02</span>
+                    <div>
+                        <h3>Reservation Details</h3>
+                        <p>Choose when you'd like to visit us.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="9">9 Guests</option>
+                            <option value="10">10 Guests</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reservationDate">Date</label>
+                        <input type="date" id="reservationDate"
+                            name="reservationDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reservationTime">Preferred Time</label>
+                        <input type="time" id="reservationTime"
+                            name="reservationTime" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOD AND DRINKS -->
+            <section class="reservation-box">
+                <div class="box-heading">
+                    <span>03</span>
+                    <div>
+                        <h3>Choose Your Food & Drinks</h3>
+                        <p>Select what you'd like to enjoy.</p>
+                    </div>
+                </div>
+
+                <div class="food-selection">
+
+                    <!-- MAIN DISHES -->
+                    <div class="food-category">
+                        <h3>Main Dishes</h3>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Jollof Rice & Fried Chicken</h4>
+                            <p>Rich Nigerian jollof rice served with crispy fried chicken.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦6,500</strong>
+                            <input type="number" class="quantity" data-name="Jollof Rice & Fried Chicken" data-price="6500" min="0" value="0" aria-label="Jollof Rice quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Fried Rice & Chicken</h4>
+                            <p>Flavorful fried rice served with perfectly seasoned chicken.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦6,500</strong>
+                            <input type="number" class="quantity" data-name="Fried Rice & Chicken" data-price="6500" min="0" value="0" aria-label="Fried Rice quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>White Rice & Stew</h4>
+                            <p>Steamed white rice served with rich, flavorful Nigerian stew.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦5,000</strong>
+                            <input type="number" class="quantity" data-name="White Rice & Stew" data-price="5000" min="0" value="0" aria-label="White Rice quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Eba & Vegetable Soup</h4>
+                            <p>Soft eba served with delicious Nigerian vegetable soup.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦5,500</strong>
+                            <input type="number" class="quantity" data-name="Eba & Vegetable Soup" data-price="5500" min="0" value="0" aria-label="Eba and Vegetable Soup quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Eba & Egusi Soup</h4>
+                            <p>Freshly prepared eba served with rich egusi soup.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦6,000</strong>
+                            <input type="number" class="quantity" data-name="Eba & Egusi Soup" data-price="6000" min="0" value="0" aria-label="Eba and Egusi quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Pounded Yam & Egusi Soup</h4>
+                            <p>Soft pounded yam paired with flavorful egusi soup.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦7,000</strong>
+                            <input type="number" class="quantity" data-name="Pounded Yam & Egusi Soup" data-price="7000" min="0" value="0" aria-label="Pounded Yam quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Amala & Ewedu</h4>
+                            <p>Traditional amala served with smooth ewedu and stew.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦5,500</strong>
+                            <input type="number" class="quantity" data-name="Amala & Ewedu" data-price="5500" min="0" value="0" aria-label="Amala quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Ofada Rice & Sauce</h4>
+                            <p>Authentic Ofada rice served with delicious traditional sauce.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦7,000</strong>
+                            <input type="number" class="quantity" data-name="Ofada Rice & Sauce" data-price="7000" min="0" value="0" aria-label="Ofada Rice quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Fisherman Soup</h4>
+                            <p>A flavorful seafood soup packed with fresh ingredients.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦9,500</strong>
+                            <input type="number" class="quantity" data-name="Fisherman Soup" data-price="9500" min="0" value="0" aria-label="Fisherman Soup quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Pepper Soup</h4>
+                            <p>A warm and flavorful Nigerian pepper soup.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦6,000</strong>
+                            <input type="number" class="quantity" data-name="Pepper Soup" data-price="6000" min="0" value="0" aria-label="Pepper Soup quantity">
+                        </div>
+                    </div>
+
+                    <!-- NIGERIAN SOUPS -->
+                    <div class="food-category">
+                        <h3>Nigerian Soups</h3>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Egusi Soup</h4>
+                            <p>Rich and flavorful Nigerian egusi soup.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦4,500</strong>
+                            <input type="number" class="quantity" data-name="Egusi Soup" data-price="4500" min="0" value="0" aria-label="Egusi Soup quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Vegetable Soup</h4>
+                            <p>Fresh vegetables cooked into a delicious Nigerian soup.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦4,500</strong>
+                            <input type="number" class="quantity" data-name="Vegetable Soup" data-price="4500" min="0" value="0" aria-label="Vegetable Soup quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Okra Soup</h4>
+                            <p>Traditional Nigerian okra soup prepared with rich flavors.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦4,000</strong>
+                            <input type="number" class="quantity" data-name="Okra Soup" data-price="4000" min="0" value="0" aria-label="Okra Soup quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Ewedu</h4>
+                            <p>Smooth traditional Nigerian jute leaf soup.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦3,500</strong>
+                            <input type="number" class="quantity" data-name="Ewedu" data-price="3500" min="0" value="0" aria-label="Ewedu quantity">
+                        </div>
+                    </div>
+
+                    <!-- PROTEINS AND SIDES -->
+                    <div class="food-category">
+                        <h3>Proteins & Sides</h3>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Grilled Chicken</h4>
+                            <p>Tender professionally grilled chicken served with sauce.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦7,500</strong>
+                            <input type="number" class="quantity" data-name="Grilled Chicken" data-price="7500" min="0" value="0" aria-label="Grilled Chicken quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Fried Chicken</h4>
+                            <p>Crispy, seasoned fried chicken.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦5,500</strong>
+                            <input type="number" class="quantity" data-name="Fried Chicken" data-price="5500" min="0" value="0" aria-label="Fried Chicken quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Grilled Fish</h4>
+                            <p>Fresh fish grilled and seasoned to perfection.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦9,000</strong>
+                            <input type="number" class="quantity" data-name="Grilled Fish" data-price="9000" min="0" value="0" aria-label="Grilled Fish quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Fried Fish</h4>
+                            <p>Crispy fried fish with delicious seasoning.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦7,500</strong>
+                            <input type="number" class="quantity" data-name="Fried Fish" data-price="7500" min="0" value="0" aria-label="Fried Fish quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Beef</h4>
+                            <p>Tenderly prepared seasoned beef.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦6,000</strong>
+                            <input type="number" class="quantity" data-name="Beef" data-price="6000" min="0" value="0" aria-label="Beef quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Turkey</h4>
+                            <p>Well-seasoned and delicious turkey.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦7,500</strong>
+                            <input type="number" class="quantity" data-name="Turkey" data-price="7500" min="0" value="0" aria-label="Turkey quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Fried Plantain</h4>
+                            <p>Golden, sweet and crispy fried plantain.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦2,500</strong>
+                            <input type="number" class="quantity" data-name="Fried Plantain" data-price="2500" min="0" value="0" aria-label="Fried Plantain quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Coleslaw (Salad)</h4>
+                            <p>Fresh and creamy homemade coleslaw.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦2,500</strong>
+                            <input type="number" class="quantity" data-name="Coleslaw (Salad)" data-price="2500" min="0" value="0" aria-label="Coleslaw quantity">
+                        </div>
+                    </div>
+
+                    <!-- DRINKS AND BEVERAGES -->
+                    <div class="food-category">
+                        <h3>Drinks & Beverages</h3>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Coca-Cola</h4>
+                            <p>Chilled Coca-Cola.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦2,000</strong>
+                            <input type="number" class="quantity" data-name="Coca-Cola" data-price="2000" min="0" value="0" aria-label="Coca-Cola quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Fanta</h4>
+                            <p>Refreshing chilled Fanta.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦2,000</strong>
+                            <input type="number" class="quantity" data-name="Fanta" data-price="2000" min="0" value="0" aria-label="Fanta quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Pepsi</h4>
+                            <p>Refreshing chilled Pepsi.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦2,000</strong>
+                            <input type="number" class="quantity" data-name="Pepsi" data-price="2000" min="0" value="0" aria-label="Pepsi quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Sprite</h4>
+                            <p>Cold and refreshing Sprite.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦2,000</strong>
+                            <input type="number" class="quantity" data-name="Sprite" data-price="2000" min="0" value="0" aria-label="Sprite quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Malt</h4>
+                            <p>Refreshing malt beverage.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦2,500</strong>
+                            <input type="number" class="quantity" data-name="Malt" data-price="2500" min="0" value="0" aria-label="Malt quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Fresh Orange Juice</h4>
+                            <p>Freshly prepared orange juice.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦3,500</strong>
+                            <input type="number" class="quantity" data-name="Fresh Orange Juice" data-price="3500" min="0" value="0" aria-label="Orange Juice quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Fresh Mango Juice</h4>
+                            <p>Sweet and refreshing mango juice.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦3,500</strong>
+                            <input type="number" class="quantity" data-name="Fresh Mango Juice" data-price="3500" min="0" value="0" aria-label="Mango Juice quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Watermelon Juice</h4>
+                            <p>Fresh and naturally refreshing watermelon juice.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦3,500</strong>
+                            <input type="number" class="quantity" data-name="Watermelon Juice" data-price="3500" min="0" value="0" aria-label="Watermelon Juice quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Boba Tea</h4>
+                            <p>Refreshing tea served with chewy boba pearls.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦5,000</strong>
+                            <input type="number" class="quantity" data-name="Boba Tea" data-price="5000" min="0" value="0" aria-label="Boba Tea quantity">
+                        </div>
+                    </div>
+
+                    <div class="food-option">
+                        <div>
+                            <h4>Bottled Water</h4>
+                            <p>Chilled bottled water.</p>
+                        </div>
+                        <div class="food-controls">
+                            <strong>₦1,000</strong>
+                            <input type="number" class="quantity" data-name="Bottled Water" data-price="1000" min="0" value="0" aria-label="Bottled Water quantity">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ORDER SUMMARY -->
+                <div class="order-summary">
+                    <h3>Your Selection</h3>
+
+                    <div id="selectedItems">
+                        No items selected yet.
+                    </div>
+
+                    <div class="total">
+                        <span>Estimated Total</span>
+                        <strong id="totalPrice">₦0</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SPECIAL REQUEST -->
+            <section class="reservation-box">
+                <div class="box-heading">
+                    <span>04</span>
+                    <div>
+                        <h3>Special Request</h3>
+                        <p>Anything else you'd like us to know?</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialRequest">Additional Information</label>
+                    <textarea id="specialRequest" name="specialRequest" rows="5"
+                        placeholder="Example: Birthday celebration, window seat, allergies, etc."></textarea>
+                </div>
+            </section>
+
+            <!-- SUBMIT -->
+            <div class="submit-area">
+                <button type="submit" class="reserve-button">Book My Table</button>
+                <p>Your reservation request will be reviewed by Miraven.</p>
+            </div>
+
+        </form>
+
+        <!-- CONFIRMATION -->
+        <div id="confirmation" class="confirmation" hidden>
+            <div class="confirmation-icon">✓</div>
+            <h2>Reservation Request Received!</h2>
+            <p id="confirmationMessage"></p>
+            <a href="index.html" class="home-button">Back to Miraven</a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="reservation-footer">
+        <h2>Miraven</h2>
+        <p>Great food. Great atmosphere. Great moments.</p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="experience.html">Experience</a>
+            <a href="reservation.html">Reservation</a>
+        </div>
+
+        <p class="copyright">&copy; 2026 Miraven. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Prevent customers from selecting a past reservation date.
+        const reservationDate = document.getElementById("reservationDate");
+        const today = new Date();
+        const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+            .toISOString().split("T")[0];
+
+        reservationDate.min = localToday;
+    </script>
+
+    <script src="reservation.js"></script>
+
+</body>
+</html>
